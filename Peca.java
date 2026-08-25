@@ -3,6 +3,6 @@ public class Peca {
     public String nomePeca;
     public String fabricante;
     public double precoCusto;
-    public double precoVenda;
+    public double precoVenda;     
     public int quantidadeEstoque;
 }
