@@ -1,5 +1,5 @@
 public class Peca {
-    public int codigo;              // código numérico único e sequencial, gerado pela plataforma
+    public int codigo;             
     public String nomePeca;
     public String fabricante;
     public double precoCusto;
