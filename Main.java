@@ -27,21 +27,21 @@ public class Main {
         Gerenciador.listarServicos();
 
         System.out.println("\n########## DELETE ##########");
-        Gerenciador.removerPeca(codPeca2); // remove a peça "do meio" para validar a reorganização
+        Gerenciador.removerPeca(codPeca2); 
         Gerenciador.listarPecas();
 
         Gerenciador.removerServico(codServico2);
         Gerenciador.listarServicos();
 
         System.out.println("\n########## VALIDAÇÃO PÓS-REMOÇÃO ##########");
-        // Tenta buscar/atualizar/remover um registro que já foi removido
+    
         int indiceAposRemocao = Gerenciador.buscarPecaPorCodigo(Gerenciador.getPecas(), Gerenciador.getTotalPecas(), codPeca2);
         System.out.println("Busca pela peça removida (código " + codPeca2 + ") retornou: " + indiceAposRemocao + " (esperado: -1)");
-        Gerenciador.atualizarPeca(codPeca2, "x", "x", 0, 0, 0); // deve imprimir erro
-        Gerenciador.removerServico(codServico2);                // deve imprimir erro (já removido)
+        Gerenciador.atualizarPeca(codPeca2, "x", "x", 0, 0, 0); 
+        Gerenciador.removerServico(codServico2);               
 
         System.out.println("\n########## NOVO CADASTRO APÓS REMOÇÃO ##########");
-        // Verifica que o próximo espaço vazio é reaproveitado corretamente e o código continua sequencial
+
         int codPeca4 = Gerenciador.cadastrarPeca("Vela de Ignição", "NGK", 15.00, 32.90, 100);
         Gerenciador.listarPecas();
         System.out.println("Novo código gerado (deve ser sequencial, não reaproveitado): " + codPeca4);
